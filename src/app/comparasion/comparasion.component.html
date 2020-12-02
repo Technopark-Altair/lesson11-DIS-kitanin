@@ -1,0 +1,54 @@
+<p>comparasion works!</p>
+<div>
+    <p>Первый проц</p>
+    <select [(ngModel)]="firstProcId">
+        <option *ngFor="let proc of processors" [value]='proc.id'>
+            {{proc.name}}
+        </option>
+    </select>
+    <p>второй проц</p>
+    <select [(ngModel)]="secondProcId">
+        <option *ngFor="let proc of processors" [value]='proc.id'>
+            {{proc.name}}
+        </option>
+    </select>
+    <button (click)="makeCompare()">Сравнить</button>
+</div>
+
+<h2>Сравнение</h2>
+<div class="comparasion-area">
+    <div class="comparasion-element" *ngFor="let proc of comparasionArray; let inx=index">
+        <div class="title">
+            <h2>
+                {{proc.name}}
+            </h2>
+        </div>
+        <div class="specs">
+            <div class="specs-elem">
+
+                <div class="name" *ngIf="inx == 0">
+                    Частота
+                </div>
+                <div class="value">
+                    {{proc.frequency}}
+                </div>
+            </div>
+        
+            <div class="specs-elem">
+
+                <div class="name" *ngIf="inx == 0">
+                    Кол-во ядер
+                </div>
+                <div class="value">
+                    {{proc.corsNumber}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngFor="let proc of processors">
+    <li>
+        <a [routerLink]="['proc', proc.id]">{{proc.name}}</a>
+    </li>
+</div>

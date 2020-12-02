@@ -1,0 +1,18 @@
+<div style="background-color: rgb(238, 178, 101);">
+    <h1>Add new article</h1>
+    <app-add-article  (addedNewArticle)="addNewArticle($event)"></app-add-article>
+</div>
+
+
+<p>articles works by list and routing</p>
+<div *ngFor="let article of articles">
+    <h1>
+        <a [routerLink]='["article", article.id]'>
+            {{article.header}}
+        </a>
+    </h1>
+</div>
+<p>articles works by input </p>
+<div style="background-color: beige;" *ngFor="let article of articles">
+    <app-article [articleInput]="article"></app-article>
+</div>

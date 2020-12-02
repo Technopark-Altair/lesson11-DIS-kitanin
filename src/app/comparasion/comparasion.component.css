@@ -1,0 +1,27 @@
+.comparasion-area{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-template-rows: 1fr;
+}
+.comparasion-element{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+}
+.title{
+    color: red;
+    text-align: center;
+}
+
+.specs{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+}
+
+.specs > .specs-elem{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
